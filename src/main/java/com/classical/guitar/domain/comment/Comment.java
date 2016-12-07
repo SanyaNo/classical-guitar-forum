@@ -1,17 +1,22 @@
-package com.classical.guitar.domain.comments;
+package com.classical.guitar.domain.comment;
 
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
 
+import com.classical.guitar.domain.article.Article;
 import com.classical.guitar.domain.user.User;
 @Entity
-public class Article {
+public class Comment {
 	
 	private Long id;
 	
 	private Date additionDate;
+	
+	private String body;
+	
+	private Article article;
 	
 	private User author;
 	
@@ -19,11 +24,7 @@ public class Article {
 	
 	private Integer upvoting;
 	
-	private String title;
-	
-	private String body;
-	
-	public Article(){}
+	public Comment(){}
 
 	public Long getId() {
 		return id;
@@ -39,6 +40,22 @@ public class Article {
 
 	public void setAdditionDate(Date additionDate) {
 		this.additionDate = additionDate;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+	}
+
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
 	}
 
 	public User getAuthor() {
@@ -63,22 +80,6 @@ public class Article {
 
 	public void setUpvoting(Integer upvoting) {
 		this.upvoting = upvoting;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
 	}
 	
 	

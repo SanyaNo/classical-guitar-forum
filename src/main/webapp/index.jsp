@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form>
-		//Reporting Form Beans
+		<div id = 'root'></div>
 	</form>
 </body>
 </html>

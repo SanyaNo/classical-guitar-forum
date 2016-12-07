@@ -13,6 +13,16 @@ public class UserFormBean {
 	private int age;
 	
 	private String email;
+	
+	private String gender; //TODO Labeled Enum  
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
 	public String getUsername() {
 		return username;

@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 
-import com.classical.guitar.domain.comments.Comment;
+import com.classical.guitar.domain.comment.Comment;
 import com.classical.guitar.domain.user.User;
 @Entity
 public class Photo {

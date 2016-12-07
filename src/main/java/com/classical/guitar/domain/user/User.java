@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.validation.constraints.NotNull;
 
-import com.classical.guitar.domain.comments.Comment;
+import com.classical.guitar.domain.comment.Comment;
 import com.classical.guitar.domain.gallery.Photo;
 import com.classical.guitar.domain.library.Score;
 @Entity
@@ -43,6 +43,10 @@ public class User {
 	@NotNull
 	@Column(nullable = false, unique = true)
 	private String email;
+	
+	@NotNull
+	@Column
+	private String gender;
 	
 	@NotNull
 	@Column(nullable = false)
@@ -110,6 +114,30 @@ public class User {
 
 	public void setPrivateGallery(List<Photo> privateGallery) {
 		this.privateGallery = privateGallery;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public List<Score> getLibrary() {
