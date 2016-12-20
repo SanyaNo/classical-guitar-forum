@@ -28,46 +28,5 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 @Configuration
 public class SecurityConfig extends WebMvcConfigurerAdapter {
 	
-	//Shiro
 	
-	@Bean(name = "shiroFilter")
-	public AbstractShiroFilter shiroFilter() throws Exception {
-	    ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
-	    Map<String, String> filterChainDefinitionMapping = new HashMap<>();
-	    filterChainDefinitionMapping.put("/api/health", "authc,roles[guest],ssl[8443]");
-	    filterChainDefinitionMapping.put("/login", "authc");
-	    filterChainDefinitionMapping.put("/logout", "logout");
-	    shiroFilter.setFilterChainDefinitionMap(filterChainDefinitionMapping);
-	    shiroFilter.setSecurityManager(securityManager());
-	    shiroFilter.setLoginUrl("/login");
-	    Map<String, Filter> filters = new HashMap<>();
-	    filters.put("anon", new AnonymousFilter());
-	    filters.put("authc", new FormAuthenticationFilter());
-	    LogoutFilter logoutFilter = new LogoutFilter("/login?logout");
-	    filters.put("logout", logoutFilter);
-	    filters.put("roles", new RolesAuthorizationFilter());
-	    filters.put("user", new UserFilter());
-	    shiroFilter.setFilters(filters);
-	    return (AbstractShiroFilter) shiroFilter.getObject();
-	}
-
-	@Bean(name = "securityManager")
-	public DefaultWebSecurityManager securityManager() {
-	    DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-	    securityManager.setRealm(realm());
-	    return securityManager;
-	}
-
-	@Bean(name = "realm")
-	@DependsOn("lifecycleBeanPostProcessor")
-	public PropertiesRealm realm() {
-	    PropertiesRealm propertiesRealm = new PropertiesRealm();
-	    propertiesRealm.init();
-	    return propertiesRealm;
-	}
-
-	@Bean
-	public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
-	    return new LifecycleBeanPostProcessor();
-	}
 }

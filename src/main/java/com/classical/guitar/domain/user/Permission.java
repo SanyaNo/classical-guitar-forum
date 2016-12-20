@@ -1,10 +1,12 @@
 package com.classical.guitar.domain.user;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.validation.constraints.NotNull;
 
+@Entity
 public class Permission {
 	
 	@NotNull
