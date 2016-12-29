@@ -11,6 +11,13 @@ import javax.validation.constraints.NotNull;
 
 import com.classical.guitar.domain.comment.Comment;
 import com.classical.guitar.domain.user.User;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 public class Article {
 	
@@ -40,64 +47,4 @@ public class Article {
 	@NotNull
 	@Column(nullable = false)
 	private String body;
-	
-	public Article(){}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Date getAdditionDate() {
-		return additionDate;
-	}
-
-	public void setAdditionDate(Date additionDate) {
-		this.additionDate = additionDate;
-	}
-
-	public User getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(User author) {
-		this.author = author;
-	}
-
-	public List<Comment> getCommentSection() {
-		return commentSection;
-	}
-
-	public void setCommentSection(List<Comment> commentSection) {
-		this.commentSection = commentSection;
-	}
-
-	public Integer getUpvoting() {
-		return upvoting;
-	}
-
-	public void setUpvoting(Integer upvoting) {
-		this.upvoting = upvoting;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
-	}
-	
-	
 }
