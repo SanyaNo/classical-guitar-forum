@@ -21,11 +21,6 @@ public class ArticleDaoHibernate implements ArticleDao {
 		return criteria;
 	}
 
-	@Override
-	public long count() {
-		return 0;
-	}
-
 	public Long getArticleCount() {
 		Criteria articleCriteria = getBaseCriteria();
 		Long rowCount = (Long) articleCriteria
