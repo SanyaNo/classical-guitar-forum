@@ -6,6 +6,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
@@ -20,6 +22,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories("www.classical.guitar.domain")
+@EnableAutoConfiguration
+@EntityScan("www.classical.guitar.domain")
 public class DBConfig {
 
 	@Bean
@@ -39,7 +44,7 @@ public class DBConfig {
 	   @Bean
 	   public DataSource dataSource(){
 	      DriverManagerDataSource dataSource = new DriverManagerDataSource();
-	      dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+	      dataSource.setDriverClassName("com.mysql.jdbc.Driver"); //TODO Move to app.props
 	      dataSource.setUrl("jdbc:mysql://localhost:3306/spring_app?useSSL=false");
 	      dataSource.setUsername( "admin" );
 	      dataSource.setPassword( "adagio" );
