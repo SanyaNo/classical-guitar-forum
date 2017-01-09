@@ -3,10 +3,12 @@ package com.classical.guitar.domain.user;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import com.classical.guitar.domain.comment.Comment;
@@ -59,10 +61,13 @@ public class User {
 	@Column(nullable = false)
 	private Date registrationDate;
 	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="user")
 	private List<Photo> privateGallery;
 	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="user")
 	private List<Score> library;
 	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="user")
 	private List<Comment> comments;
 
 }

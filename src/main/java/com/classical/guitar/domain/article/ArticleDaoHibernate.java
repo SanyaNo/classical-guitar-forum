@@ -89,4 +89,10 @@ public class ArticleDaoHibernate implements ArticleDao {
 		return null;
 	}
 
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
