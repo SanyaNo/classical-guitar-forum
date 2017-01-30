@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.NamedQueries;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -19,6 +20,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "score")
+@NamedQueries({
+	
+})
 public class GuitarProScore implements Score {
 	
 	@NotNull
@@ -47,4 +51,8 @@ public class GuitarProScore implements Score {
 	private String author;
 	
 	private final String FILE_TYPE = "*.gp";
+	
+	public String getFileType(){
+		return FILE_TYPE;
+	}
 }

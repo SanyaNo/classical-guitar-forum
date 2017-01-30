@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.NamedQueries;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
@@ -14,6 +15,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
+@NamedQueries({
+	
+})
 public class Permission {
 	
 	@NotNull

@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
@@ -23,6 +24,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
+@NamedQueries({
+	
+})
 public class Photo {
 	
 	@NotNull

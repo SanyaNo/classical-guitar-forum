@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -22,6 +23,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "score")
+@NamedQueries({
+	
+})
 public class PdfScore implements Score {
 	
 	@NotNull
@@ -52,4 +56,8 @@ public class PdfScore implements Score {
 	private String author;
 	
 	private final String FILE_TYPE = "*.pdf";
+	
+	public String getFileType(){
+		return FILE_TYPE;
+	}
 }
